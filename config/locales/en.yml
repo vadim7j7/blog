@@ -1,2 +1,7 @@
 en:
-  hello: "Hello world"
+  auth:
+    errors:
+      not_authorized: 'Not Authorized'
+      invalid_credentials: 'Invalid credentials'
+      invalid_token: 'Invalid token'
+      missing_token: 'Missing token'

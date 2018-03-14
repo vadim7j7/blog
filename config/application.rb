@@ -30,6 +30,9 @@ module Blog
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Load libraries
+    config.autoload_paths << Rails.root.join('lib')
+
     # Add RackAttack to middleware
     config.middleware.use Rack::Attack
   end

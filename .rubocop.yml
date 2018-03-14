@@ -10,3 +10,5 @@ Style/NumericLiterals:
     - 'db/schema.rb'
 Style/Documentation:
   Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
