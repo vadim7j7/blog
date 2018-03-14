@@ -4,15 +4,10 @@ class ApplicationController < ActionController::API
 
   include ExceptionHandler
 
-  rescue_from CanCan::AccessDenied do |exception|
-    render json: { error: exception.message },
-           status: :forbidden
-  end
-
   private
 
   def authenticate_request
-    @current_user = Auth::AuthorizeApiRequest.call(request.headers).result
+    @current_user = AuthorizeApiRequest.call(request.headers).result
 
     error = I18n.t('auth.errors.not_authorized')
     render json: { error: error }, status: :unauthorized unless @current_user

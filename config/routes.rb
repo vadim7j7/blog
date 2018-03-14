@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :version1 do
+    resources :auth, only: :index do
+      collection do
+        post :login
+        post :registration
+        put :new_password
+      end
+    end
+  end
 end

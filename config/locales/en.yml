@@ -5,3 +5,6 @@ en:
       invalid_credentials: 'Invalid credentials'
       invalid_token: 'Invalid token'
       missing_token: 'Missing token'
+    success:
+      authorized: 'Login Successful'
+      registration: 'User created successfully'
