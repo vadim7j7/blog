@@ -4,7 +4,6 @@ Rails.application.routes.draw do
       collection do
         post :login
         post :registration
-        put :new_password
       end
     end
   end

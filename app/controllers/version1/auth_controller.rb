@@ -4,7 +4,7 @@ module Version1
 
     def index
       render json: {
-          email: @current_user.email
+        email: @current_user.email
       }
     end
 
@@ -21,10 +21,6 @@ module Version1
       else
         render json: user.errors, status: :bad_request
       end
-    end
-
-    def new_password
-      head :no_content
     end
 
     private
