@@ -6,5 +6,7 @@ Rails.application.routes.draw do
         post :registration
       end
     end
+
+    resources :posts
   end
 end

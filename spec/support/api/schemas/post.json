@@ -1,0 +1,12 @@
+{
+  "type" : "object",
+  "required": ["id", "title", "body", "slug", "tag_list"],
+  "properties": {
+    "id": { "type" : "integer" },
+    "title": { "type" : "string" },
+    "body": { "type" : "string" },
+    "slug": { "type" : "string" },
+    "created_at": { "type" : "string" },
+    "tag_list": { "type" : "array" }
+  }
+}

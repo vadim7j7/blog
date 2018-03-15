@@ -38,6 +38,9 @@ gem 'active_model_serializers'
 # To setting some permissions
 gem 'cancancan'
 
+# A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts.
+gem 'acts-as-taggable-on'
+
 
 group :test do
   gem 'rspec-rails'
@@ -45,6 +48,9 @@ group :test do
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'faker'
+
+  # https://robots.thoughtbot.com/validating-json-schemas-with-an-rspec-matcher
+  gem 'json-schema'
 end
 
 group :development, :test do
