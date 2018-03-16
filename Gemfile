@@ -41,6 +41,10 @@ gem 'cancancan'
 # A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts.
 gem 'acts-as-taggable-on'
 
+# Ancestry is a gem that allows the records of a Ruby on Rails ActiveRecord model
+# to be organised as a tree structure
+gem 'ancestry'
+
 
 group :test do
   gem 'rspec-rails'

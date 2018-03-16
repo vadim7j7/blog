@@ -8,6 +8,7 @@ module Version1
       post = Post.find_by_id!(params[:post_id])
       comment = post.comments.build(comment_params)
       comment.user = @current_user
+      comment.parent = Comment.find_by_id!(params[:parent_id]) if params[:parent_id]
       comment.save!
 
       render json: comment

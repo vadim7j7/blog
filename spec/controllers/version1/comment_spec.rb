@@ -35,6 +35,25 @@ RSpec.describe Version1::CommentsController, type: :api do
       response = post('/version1/comments', message: 'Hello')
       expect(response.status).to eq(404)
     end
+
+    context 'children comment' do
+      it 'with success' do
+        comment = create(:comment, user: @user2, post: @post)
+
+        header('Authorization', token)
+        response = post('/version1/comments', message: 'Hello', post_id: @post.id, parent_id: comment.id)
+
+        expect(response.status).to eq(200)
+        expect(json[:comment]).to match_response_schema('comment')
+      end
+
+      it 'without success, because parent Id is invalid' do
+        header('Authorization', token)
+        response = post('/version1/comments', message: 'Hello', post_id: @post.id, parent_id: 999)
+
+        expect(response.status).to eq(404)
+      end
+    end
   end
 
   describe 'update' do
