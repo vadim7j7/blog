@@ -6,6 +6,9 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_one :profile,
+          primary_key: :user_id,
+          foreign_key: :user_id
 
   enum status: %i[draft posted blocked]
 

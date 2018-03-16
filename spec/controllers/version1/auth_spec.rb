@@ -25,7 +25,8 @@ RSpec.describe Version1::AuthController, type: :api do
       header('Authorization', token)
       get('/version1/auth')
 
-      expect(json[:email]).to eq(@user.email)
+      expect(json[:profile][:email]).to eq(@user.email)
+      expect(json[:profile]).to match_response_schema('profile')
     end
 
     it 'sends invalid token' do

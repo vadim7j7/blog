@@ -8,6 +8,7 @@
     "slug": { "type" : "string" },
     "created_at": { "type" : "string" },
     "tag_list": { "type" : "array" },
-    "comments": { "type": "array" }
+    "comments": { "type": "array" },
+    "user": { "type": "object" }
   }
 }
