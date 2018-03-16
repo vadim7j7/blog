@@ -4,6 +4,7 @@
   "properties": {
     "id": { "type" : "integer" },
     "message": { "type" : "string" },
+    "children": { "type": "array" },
     "created_at": { "type" : "string" }
   }
 }

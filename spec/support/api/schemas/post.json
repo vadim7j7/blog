@@ -7,6 +7,7 @@
     "body": { "type" : "string" },
     "slug": { "type" : "string" },
     "created_at": { "type" : "string" },
-    "tag_list": { "type" : "array" }
+    "tag_list": { "type" : "array" },
+    "comments": { "type": "array" }
   }
 }
