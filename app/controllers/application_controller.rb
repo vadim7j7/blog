@@ -6,6 +6,16 @@ class ApplicationController < ActionController::API
 
   attr_reader :current_user
 
+  def pagination(obj)
+    {
+      pagination: {
+        perPage: obj.per_page,
+        totalPages: obj.total_pages,
+        totalObjects: obj.total_entries
+      }
+    }
+  end
+
   private
 
   def authenticate_request

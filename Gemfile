@@ -41,6 +41,9 @@ gem 'cancancan'
 # A tagging plugin for Rails applications that allows for custom tagging along dynamic contexts.
 gem 'acts-as-taggable-on'
 
+# This is a pagination library that integrates with Ruby on Rails
+gem 'will_paginate'
+
 # Ancestry is a gem that allows the records of a Ruby on Rails ActiveRecord model
 # to be organised as a tree structure
 gem 'ancestry'

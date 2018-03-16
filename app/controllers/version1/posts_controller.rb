@@ -4,8 +4,10 @@ module Version1
     before_action :load_post, only: %i[show update destroy]
 
     def index
-      resources = Post.order(created_at: :desc).all
-      render json: resources
+      resources = Post.order(created_at: :desc)
+                      .paginate(page: params[:page], per_page: 20)
+
+      render json: resources, meta: pagination(resources)
     end
 
     def show
