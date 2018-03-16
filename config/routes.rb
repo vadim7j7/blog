@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     end
 
     resources :posts
+
+    resources :comments, except: %i[index show]
   end
 end

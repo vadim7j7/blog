@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   before_validation :creating, on: %i[create update]
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   enum status: %i[draft posted blocked]
 

@@ -38,7 +38,7 @@ RSpec.describe Version1::PostsController, type: :api do
       expect(json[:post][:slug]).to eq(StringUtils.str_to_slug(json[:post][:title]))
     end
 
-    it 'was not update because the user does not have access' do
+    it 'was not updated because the user does not have access' do
       post = create(:post, user: create(:user))
 
       header('Authorization', token)
