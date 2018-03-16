@@ -1,13 +1,13 @@
 {
   "type" : "object",
-  "required": ["id", "title", "body", "slug", "tag_list"],
+  "required": ["id", "title", "body", "slug", "createdAt", "tagList"],
   "properties": {
     "id": { "type" : "integer" },
     "title": { "type" : "string" },
     "body": { "type" : "string" },
     "slug": { "type" : "string" },
-    "created_at": { "type" : "string" },
-    "tag_list": { "type" : "array" },
+    "createdAt": { "type" : "string" },
+    "tagList": { "type" : "array" },
     "comments": { "type": "array" },
     "user": { "type": "object" }
   }

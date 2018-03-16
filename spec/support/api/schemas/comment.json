@@ -1,11 +1,11 @@
 {
   "type" : "object",
-  "required": ["id", "message", "created_at"],
+  "required": ["id", "message", "createdAt"],
   "properties": {
     "id": { "type" : "integer" },
     "message": { "type" : "string" },
     "children": { "type": "array" },
-    "created_at": { "type" : "string" },
+    "createdAt": { "type" : "string" },
     "user": { "type": "object" }
   }
 }

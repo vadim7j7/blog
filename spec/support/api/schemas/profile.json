@@ -1,12 +1,12 @@
 {
   "type" : "object",
-  "required": ["email", "first_name", "last_name", "full_name", "small_name", "title", "description", "avatar"],
+  "required": ["email", "firstName", "lastName", "fullName", "smallName", "title", "description", "avatar"],
   "properties": {
     "email": { "type" : "string" },
-    "first_name": { "type" : "string" },
-    "last_name": { "type" : "string" },
-    "full_name": { "type" : "string" },
-    "small_name": { "type" : "string" },
+    "firstName": { "type" : "string" },
+    "lastName": { "type" : "string" },
+    "fullName": { "type" : "string" },
+    "smallName": { "type" : "string" },
     "title": { "type" : "string" },
     "description": { "type": "string" },
     "avatar": {

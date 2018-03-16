@@ -23,8 +23,8 @@ RSpec.describe Version1::PostsController, type: :api do
 
     expect(response.status).to eq(200)
     expect(json[:profile]).to match_response_schema('profile')
-    expect(json[:profile][:first_name]).to eq('John')
-    expect(json[:profile][:last_name]).to eq('Die')
+    expect(json[:profile][:firstName]).to eq('John')
+    expect(json[:profile][:lastName]).to eq('Die')
   end
 
   it 'was not updated because the token is invalid' do
