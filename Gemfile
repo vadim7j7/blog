@@ -45,6 +45,9 @@ gem 'acts-as-taggable-on'
 # to be organised as a tree structure
 gem 'ancestry'
 
+# Paperclip is intended as an easy file attachment library for ActiveRecord.
+gem 'paperclip'
+
 
 group :test do
   gem 'rspec-rails'

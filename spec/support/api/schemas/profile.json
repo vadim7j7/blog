@@ -1,0 +1,21 @@
+{
+  "type" : "object",
+  "required": ["email", "first_name", "last_name", "full_name", "small_name", "title", "description", "avatar"],
+  "properties": {
+    "email": { "type" : "string" },
+    "first_name": { "type" : "string" },
+    "last_name": { "type" : "string" },
+    "full_name": { "type" : "string" },
+    "small_name": { "type" : "string" },
+    "title": { "type" : "string" },
+    "description": { "type": "string" },
+    "avatar": {
+      "type" : ["object", "null"],
+      "required": ["medium", "thumb"],
+      "properties": {
+        "medium": { "type" : "string" },
+        "thumb": { "type" : "string" }
+      }
+    }
+  }
+}

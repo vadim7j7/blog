@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
 
     resources :posts
-
     resources :comments, except: %i[index show]
+    resource :profile, only: %i[show update]
   end
 end

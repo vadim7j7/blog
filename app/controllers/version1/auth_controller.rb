@@ -3,9 +3,7 @@ module Version1
     skip_before_action :authenticate_request, only: %i[login registration]
 
     def index
-      render json: {
-        email: @current_user.email
-      }
+      render json: @current_user.profile
     end
 
     def login
