@@ -22,7 +22,7 @@ RSpec.describe Version1::PostsController, type: :api do
       header('Authorization', token)
       response = post('/version1/posts', body: 'Some Text!!!!!!')
 
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(422)
     end
   end
 

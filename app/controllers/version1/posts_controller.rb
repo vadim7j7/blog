@@ -13,14 +13,12 @@ module Version1
     end
 
     def create
-      post = @current_user.posts.build(post_params)
+      authorize! :create, Post
 
-      if post.save
-        render json: post
-      else
-        render json: { messages: post.errors.messages },
-               status: :bad_request
-      end
+      post = @current_user.posts.build(post_params)
+      post.save!
+
+      render json: post
     end
 
     def update
