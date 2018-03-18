@@ -42,7 +42,11 @@ module Version1
     private
 
     def load_post
-      @post = Post.find_by_id!(params[:id])
+      @post = if params[:id].to_i.zero?
+                Post.find_by_slug!(params[:id])
+              else
+                Post.find_by_id!(params[:id])
+              end
     end
 
     def post_params
