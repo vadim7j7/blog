@@ -7,8 +7,11 @@ class ApplicationController < ActionController::API
   attr_reader :current_user
 
   def pagination(obj)
+    page = params[:page].to_i
+
     {
       pagination: {
+        currentPage: page <= 0 ? 1 : page,
         perPage: obj.per_page,
         totalPages: obj.total_pages,
         totalObjects: obj.total_entries
