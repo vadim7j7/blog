@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validates_presence_of :email, :password_digest
   validates :email, uniqueness: true
 
+  accepts_nested_attributes_for :profile
+
   private
 
   def created

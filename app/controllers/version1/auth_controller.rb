@@ -37,7 +37,12 @@ module Version1
     end
 
     def user_params
-      params.permit(:email, :password)
+      params.permit(
+        :email,
+        :password,
+        :password_confirmation,
+        profile_attributes: %i[first_name last_name title description]
+      )
     end
   end
 end
