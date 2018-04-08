@@ -12,27 +12,38 @@ module Version1
 
     def registration
       user = User.new(user_params)
-
-      if user.save
-        response = { message: I18n.t('auth.success.registration') }
-        render json: response, status: :created
-      else
-        render json: user.errors, status: :bad_request
-      end
+      create_user(user)
     end
 
     private
 
+    # @param[String] email
+    # @param[String] password
     def authenticate(email, password)
       command = AuthenticateUser.call(email, password)
 
       if command.success?
         render json: {
-          access_token: command.result,
+          accessToken: command.result,
           message: I18n.t('auth.success.authorized')
         }
       else
         render json: { error: command.errors }, status: :unauthorized
+      end
+    end
+
+    # @param[User] user
+    def create_user(user)
+      if user.save
+        token = JsonWebToken.encode(user_id: user.id)
+
+        response = {
+          accessToken: token,
+          message: I18n.t('auth.success.registration')
+        }
+        render json: response, status: :created
+      else
+        render json: user.errors, status: :bad_request
       end
     end
 

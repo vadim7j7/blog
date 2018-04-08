@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  before_validation :creating, on: :create
+
   belongs_to :user, optional: true
 
   has_attached_file :avatar,
@@ -18,5 +20,11 @@ class Profile < ApplicationRecord
   def small_name
     tmp = [first_name.first, last_name.first].compact.join('').upcase
     tmp.blank? ? email.first.upcase : tmp
+  end
+
+  private
+
+  def creating
+    self.email = user.email
   end
 end
